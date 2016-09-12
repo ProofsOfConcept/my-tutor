@@ -1,0 +1,29 @@
+<div>
+    <md-content layout-xs="column" layout="row" layout-align="center center" layout-fill>
+        <div id="md-login"  class="loginBox md-whiteframe-z1" layout="column">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>
+                        <span>MPP</span>
+                    </h2>
+                </div>
+            </md-toolbar>
+            <md-content class="md-padding" layout="column">
+                <md-input-container class="md-icon-float md-block">
+                    <label>Usuario</label>
+                    <md-icon md-svg-src="img/icons/svg/ic_person_24px.svg"></md-icon>
+                    <input required type="text" ng-model="login" name="login">
+                </md-input-container>
+                <md-input-container class="md-icon-float md-block">
+                    <label>Senha</label>
+                    <md-icon md-svg-src="img/icons/svg/ic_vpn_key_24px.svg"></md-icon>
+                    <input required type="password" name="password" ng-model="password">
+                </md-input-container>
+                <div layout="row" layout-align="center center">
+                    <md-button class="md-raised md-primary" ng-click="logar()">Entrar</md-button>
+                </div>
+            </md-content>
+            <md-progress-linear ng-show="progressLogin" md-mode="indeterminate"></md-progress-linear>
+        </div>
+    </md-content>
+</div>
