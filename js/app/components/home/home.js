@@ -1,6 +1,8 @@
-function HomeController($scope, $mdSidenav, $log) {
+function HomeController($scope, $mdSidenav, $log, $mdDialog) {
     $scope.lessons = [];
     $scope.loadingHome = false;
+    $scope.fabBtn = {};
+
     $scope.toggleLeft = function () {
         $mdSidenav('left')
             .toggle()
@@ -9,8 +11,37 @@ function HomeController($scope, $mdSidenav, $log) {
             });
     };
 
+
+    $scope.openDialog = function ($event, item) {
+        // Show the dialog
+        $mdDialog.show({
+            clickOutsideToClose: true,
+            controller: function ($mdDialog) {
+                // Save the clicked item
+                this.item = item;
+
+                // Setup some handlers
+                this.close = function () {
+                    $mdDialog.cancel();
+                };
+                this.submit = function () {
+                    $mdDialog.hide();
+                };
+            },
+            controllerAs: 'dialog',
+            templateUrl: 'dialog.html',
+            targetEvent: $event
+        });
+    };
+
     $scope.initHome = function () {
         $scope.loadingHome = true;
+
+        $scope.fabBtn = {
+            isOpen: false,
+            hidden: false,
+            hover: false
+        };
 
         var max = 50;
         for (var i = 0; i < max; i++) {

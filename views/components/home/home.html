@@ -63,9 +63,61 @@
             <md-divider md-inset ng-if="!$last"></md-divider>
         </md-list-item>
     </md-list>
+
     <div layout="row" flex="noshrink" layout-align="center center" aria-hidden="false">
         <div>Powered by 4Brain inc ©2016.</div>
     </div>
 </md-content>
+<div class="mpp-fab">
+    <md-fab-speed-dial md-open="fabBtn.isOpen" md-direction="up"
+                       class="md-fling" ng-mouseenter="fabBtn.isOpen=true"
+                       ng-mouseleave="fabBtn.isOpen=false">
+        <md-fab-trigger>
+            <md-button aria-label="menu" class="md-fab">
+                <md-icon md-svg-src="img/icons/svg/ic_add_24px.svg"></md-icon>
+            </md-button>
+        </md-fab-trigger>
+
+        <md-fab-actions>
+            <md-button aria-label="Aula" class="md-fab md-raised md-mini" ng-click="openDialog($event);">
+                <md-tooltip md-direction="left" md-autohide="true">Aula</md-tooltip>
+                <md-icon md-svg-src="img/icons/svg/ic_create_24px.svg" aria-label="Aula"></md-icon>
+            </md-button>
+            <md-button aria-label="Aluno" class="md-fab md-raised md-mini" ng-click="openDialog($event);">
+                <md-tooltip md-direction="left" md-autohide="true">Aluno</md-tooltip>
+                <md-icon md-svg-src="img/icons/svg/ic_person_24px.svg" aria-label="Aluno"></md-icon>
+            </md-button>
+            <md-button aria-label="Professor" class="md-fab md-raised md-mini" ng-click="openDialog($event);">
+                <md-tooltip md-direction="left" md-autohide="true">Professor</md-tooltip>
+                <md-icon md-svg-src="img/icons/svg/ic_school_24px.svg" aria-label="Professor"></md-icon>
+            </md-button>
+        </md-fab-actions>
+    </md-fab-speed-dial>
+
+    <script type="text/ng-template" id="dialog.html">
+        <md-dialog>
+            <md-toolbar>
+                <div class="md-toolbar-tools">Cool Dialog!</div>
+            </md-toolbar>
+
+            <md-dialog-content layout-padding>
+                Hello user! you clicked {{dialog.item.name}}.
+            </md-dialog-content>
+
+            <md-dialog-actions>
+                <md-button aria-label="Close dialog" ng-click="dialog.close()" class="md-primary">
+                    Close Greeting
+                </md-button>
+
+                <md-button aria-label="Submit dialog" ng-click="dialog.submit()" class="md-primary">
+                    Submit
+                </md-button>
+            </md-dialog-actions>
+
+        </md-dialog>
+    </script>
+</div>
+
+
 
 
