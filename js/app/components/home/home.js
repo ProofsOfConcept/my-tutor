@@ -1,4 +1,4 @@
-function HomeController($scope, $mdSidenav, $log, $mdDialog) {
+function HomeController($scope, $mdSidenav, $log, $mdDialog, $timeout) {
     $scope.lessons = [];
     $scope.loadingHome = false;
     $scope.fabBtn = {};
@@ -11,6 +11,15 @@ function HomeController($scope, $mdSidenav, $log, $mdDialog) {
             });
     };
 
+    $scope.$watch('fabBtn.isOpen', function(isOpen) {
+        if (isOpen) {
+            $timeout(function() {
+                $scope.tooltipVisible = $scope.fabBtn.isOpen;
+            }, 600);
+        } else {
+            $scope.tooltipVisible = $scope.fabBtn.isOpen;
+        }
+    });
 
     $scope.openDialog = function ($event, item) {
         // Show the dialog

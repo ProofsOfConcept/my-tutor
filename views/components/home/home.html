@@ -4,7 +4,7 @@
             <md-icon md-svg-icon="img/icons/svg/ic_menu_24px.svg"></md-icon>
         </md-button>
         <h2 class="md-flex">
-            <span>MPP</span>
+            <span>SPP Backoffice</span>
         </h2>
     </div>
 </md-toolbar>
@@ -80,15 +80,15 @@
 
         <md-fab-actions>
             <md-button aria-label="Aula" class="md-fab md-raised md-mini" ng-click="openDialog($event);">
-                <md-tooltip md-direction="left" md-autohide="true">Aula</md-tooltip>
+                <md-tooltip md-direction="left" md-autohide="false" md-visible="tooltipVisible">Aula</md-tooltip>
                 <md-icon md-svg-src="img/icons/svg/ic_create_24px.svg" aria-label="Aula"></md-icon>
             </md-button>
             <md-button aria-label="Aluno" class="md-fab md-raised md-mini" ng-click="openDialog($event);">
-                <md-tooltip md-direction="left" md-autohide="true">Aluno</md-tooltip>
+                <md-tooltip md-direction="left" md-autohide="false" md-visible="tooltipVisible">Aluno</md-tooltip>
                 <md-icon md-svg-src="img/icons/svg/ic_person_24px.svg" aria-label="Aluno"></md-icon>
             </md-button>
             <md-button aria-label="Professor" class="md-fab md-raised md-mini" ng-click="openDialog($event);">
-                <md-tooltip md-direction="left" md-autohide="true">Professor</md-tooltip>
+                <md-tooltip md-direction="left" md-autohide="false" md-visible="tooltipVisible">Professor</md-tooltip>
                 <md-icon md-svg-src="img/icons/svg/ic_school_24px.svg" aria-label="Professor"></md-icon>
             </md-button>
         </md-fab-actions>
